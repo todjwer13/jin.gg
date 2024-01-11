@@ -37,33 +37,43 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
       },
       s_tier: {
+        allowNull: true,
         type: DataTypes.STRING,
       },
       s_rank: {
+        allowNull: true,
         type: DataTypes.STRING,
       },
       s_league_points: {
+        allowNull: true,
         type: DataTypes.INTEGER,
       },
       s_wins: {
+        allowNull: true,
         type: DataTypes.INTEGER,
       },
       s_losses: {
+        allowNull: true,
         type: DataTypes.INTEGER,
       },
       f_tier: {
+        allowNull: true,
         type: DataTypes.STRING,
       },
       f_rank: {
+        allowNull: true,
         type: DataTypes.STRING,
       },
       f_league_points: {
+        allowNull: true,
         type: DataTypes.INTEGER,
       },
       f_wins: {
+        allowNull: true,
         type: DataTypes.INTEGER,
       },
       f_losses: {
+        allowNull: true,
         type: DataTypes.INTEGER,
       },
     },

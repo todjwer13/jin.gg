@@ -9,6 +9,7 @@ const summonerRouter = require('./routes/summoner.router');
 app.use(express.json());
 app.use(cookieParser());
 
+app.use(express.static('assets'));
 app.use('/', [summonerRouter]);
 
 app.listen(PORT, () => {

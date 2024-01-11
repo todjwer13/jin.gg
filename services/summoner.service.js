@@ -48,18 +48,16 @@ class SummonerService {
     }
   };
   // DB에서 puuid를 기준으로 소환사 정보 조회
-  isSummonerDataExist = async (summoner_id) => {
-    console.log(summoner_id);
-    const existingSummoner = await Summoner.findOne({ where: { summoner_id: summoner_id } });
-    return existingSummoner;
-  };
-
-  // 소환사 정보 DB저장
-  createSummonerData = async (summonerInfo) => {
-    const createSummonerData = await Summoner.create({
-      summonerInfo,
-    });
-    return createSummonerData;
+  isSummonerDataExist = async (summonerInfo) => {
+    const existingSummoner = await Summoner.findOne({ where: { summoner_id: summonerInfo.summoner_id } });
+    if (existingSummoner == null) {
+      // 없다면 소환사 정보 DB저장
+      const createSummonerData = await Summoner.create({ ...summonerInfo });
+      return createSummonerData;
+    } else {
+      // 있다면 호출
+      return existingSummoner;
+    }
   };
 }
 
